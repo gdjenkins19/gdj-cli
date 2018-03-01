@@ -1,0 +1,23 @@
+{
+  "name": "gdj-cli",
+  "version": "1.0.0",
+  "description": "Testing CLI Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdjenkins19/gdj-cli.git"
+  },
+  "author": "Gary Dean Jenkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdjenkins19/gdj-cli/issues"
+  },
+  "homepage": "https://github.com/gdjenkins19/gdj-cli#readme",
+  "bin": {
+	  "gdj-cli-1": "./gdj-cli-1.js",
+	  "gdj-cli-2": "./gdj-cli-2.js"
+  }
+}
