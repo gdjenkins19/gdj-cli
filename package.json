@@ -1,8 +1,8 @@
 {
   "name": "gdj-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Testing CLI Tool",
-  "main": "index.js",
+  "main": "fuzion-clli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/gdjenkins19/gdj-cli#readme",
   "bin": {
-	  "gdj-cli-1": "./gdj-cli-1.js",
-	  "gdj-cli-2": "./gdj-cli-2.js"
+    "fuzion-cli": "./fuzion-cli.js"
+  },
+  "dependencies": {
+    "optimist": "^0.6.1"
   }
 }
