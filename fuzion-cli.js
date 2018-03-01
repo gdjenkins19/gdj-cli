@@ -29,5 +29,3 @@ for(let i=0; i<ops.length; i++) {
 function fuzionCliError(errorString) {
 	console.log(errorString);
 }
-
-
