@@ -16,10 +16,13 @@
     "url": "https://github.com/gdjenkins19/gdj-cli/issues"
   },
   "homepage": "https://github.com/gdjenkins19/gdj-cli#readme",
+  "dependencies": {
+    "fuzion-core-lib": "git+https://github.com/Klowd/fuzion-core-lib.git#dev",
+    "mysql": "^2.15.0",
+    "optimist": "^0.6.1",
+    "shelljs": "^0.8.1"
+  },
   "bin": {
     "fuzion-cli": "./fuzion-cli.js"
-  },
-  "dependencies": {
-    "optimist": "^0.6.1"
   }
 }
