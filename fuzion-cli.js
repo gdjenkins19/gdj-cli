@@ -8,9 +8,17 @@ console.log(`fuzion-cli --op ${argv.op}`);
 
 const ops = argv.op.split('|');
 
-for(let i=0; i<ops.length; i++) {
-	console.log(`fuzion-cli --op ${ops[i]}`);
-	switch(ops[i]) {
+iterateOps(ops);
+
+async function iterateOps(ops) {
+	for(let i=0; i<ops.length; i++) {
+		console.log(`fuzion-cli --op ${ops[i]}`);
+		await callAsync(ops[i]);
+	}
+}
+
+async function callAsync(op) {
+	switch(op) {
 		case "db-builder":
 			require("./lib/db-builder")();
 			break;
@@ -21,13 +29,13 @@ for(let i=0; i<ops.length; i++) {
 			require("./lib/mysql-ops").reset();
 			break;
 		case "db-tables":
-			require("./lib/db").cliTables(tables => {console.log(tables);});
+			await require("./lib/db").cliTables();
 			break;
 		case "db-table-info":
-			require("./lib/db").cliTableInfo(info => {console.log(info);});
+			await require("./lib/db").cliTableInfo();
 			break;
 		default:
-			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${ops[i]}"`);
+			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${op}"`);
 			break;
 	}
 }
