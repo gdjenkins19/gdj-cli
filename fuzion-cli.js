@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const argv = require("optimist")
-	.usage("--op [mysql-reset|mysql-start|db-builder|]")
+	.usage("--op [mysql-reset|mysql-start|db-builder|db-tables|db-table-info]")
 	.demand(["op"])
 	.argv;
 
