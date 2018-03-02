@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const argv = require("optimist")
-	.usage("--op [mysql-reset|mysql-start|db-builder]")
+	.usage("--op [mysql-reset|mysql-start|db-builder|]")
 	.demand(["op"])
 	.argv;
 
@@ -19,6 +19,14 @@ for(let i=0; i<ops.length; i++) {
 			break;
 		case "mysql-reset":
 			require("./lib/mysql-ops").reset();
+			break;
+		case "db-tables":
+			require("./lib/db").tables(tables => {console.log(tables);});
+			console.log("here2");
+			break;
+		case "db-table-info":
+			require("./lib/db").tableInfo(info => {console.log(info);});
+			console.log("here2");
 			break;
 		default:
 			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${ops[i]}"`);
