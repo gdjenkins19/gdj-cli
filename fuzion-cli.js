@@ -34,6 +34,9 @@ async function callAsync(op) {
 		case "db-table-info":
 			await require("./lib/db").cliTableInfo();
 			break;
+		case "sprocs-build":
+			await require("./lib/sprocs").build();
+			break;
 		default:
 			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${op}"`);
 			break;
