@@ -21,10 +21,10 @@ for(let i=0; i<ops.length; i++) {
 			require("./lib/mysql-ops").reset();
 			break;
 		case "db-tables":
-			require("./lib/db").tables(tables => {console.log(tables);});
+			require("./lib/db").cliTables(tables => {console.log(tables);});
 			break;
 		case "db-table-info":
-			require("./lib/db").tableInfo(info => {console.log(info);});
+			require("./lib/db").cliTableInfo(info => {console.log(info);});
 			break;
 		default:
 			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${ops[i]}"`);
