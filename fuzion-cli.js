@@ -22,11 +22,9 @@ for(let i=0; i<ops.length; i++) {
 			break;
 		case "db-tables":
 			require("./lib/db").tables(tables => {console.log(tables);});
-			console.log("here2");
 			break;
 		case "db-table-info":
 			require("./lib/db").tableInfo(info => {console.log(info);});
-			console.log("here2");
 			break;
 		default:
 			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${ops[i]}"`);
