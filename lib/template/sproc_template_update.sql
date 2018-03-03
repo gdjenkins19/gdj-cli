@@ -12,7 +12,7 @@ begin
 	set
         UPDATE_SETS
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id);
+		`fuzion_table_name_id` = unhex(in_fuzion_table_name_id);
 end //
 delimiter ;
 

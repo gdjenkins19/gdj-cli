@@ -7,7 +7,7 @@ create procedure insert_table_name (
     TABLE_PARAMS
 )
 begin
-	if not exists(select 1 from `table_name` where `fuzion_table_name_id` = unhex(fuzion_table_name_id)) then
+	if not exists(select 1 from `table_name` where `fuzion_table_name_id` = unhex(in_fuzion_table_name_id)) then
 		insert into `table_name` (
             INSERT_COLS
         )

@@ -4,7 +4,7 @@ drop procedure if exists delete_table_name;
 
 delimiter //
 create procedure delete_table_name (
-	in fuzion_table_name_id varchar(32)
+	in in_fuzion_table_name_id varchar(32)
 )
 begin
 	update
@@ -12,6 +12,6 @@ begin
 	set
 		`status_flag` = -1
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id);
+		`fuzion_table_name_id` = unhex(in_fuzion_table_name_id);
 end //
 delimiter ;

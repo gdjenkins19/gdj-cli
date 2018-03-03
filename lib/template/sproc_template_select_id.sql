@@ -4,7 +4,7 @@ drop procedure if exists select_table_name_by_id;
 
 delimiter //
 create procedure select_table_name_by_id (
-	in fuzion_table_name_id varchar(32)
+	in in_fuzion_table_name_id varchar(32)
 )
 begin
 	select
@@ -12,7 +12,7 @@ begin
 	from
 		`table_name`
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id)
+		`fuzion_table_name_id` = unhex(in_fuzion_table_name_id)
 	and
 		`status_flag` <> -1;
 end //
