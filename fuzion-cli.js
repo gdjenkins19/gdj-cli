@@ -1,48 +1,34 @@
 #!/usr/bin/env node
+const fs = require("fs");
+const path = `${__dirname}/lib`;
 const argv = require("optimist")
-	.usage("--op [mysql-reset|mysql-start|db-builder|db-tables|db-table-info]")
-	.demand(["op"])
+	.demand('o')
+	.alias('o','operation')
+	.describe('o',"Run a CLI operation.")
+	.usage(`fuzion-cli -o operation-name\nfuzion-cli -o "operation-name1|operation-name2|..."\nOperations:${listCliOperations()}`)
+	.demand(['o'])
 	.argv;
 
-console.log(`fuzion-cli --op ${argv.op}`);
+function listCliOperations() {
+	let opFiles = fs.readdirSync(path);
+	opFiles = opFiles.filter(fileName => (fs.lstatSync(`${path}/${fileName}`).isFile() && fileName.match(/\.js$/)));
+	return opFiles.map(file => ' ' + file.replace('.js',''));
+}
 
-const ops = argv.op.split('|');
+const ops = argv.o.split('|');
 
 iterateOps(ops);
 
 async function iterateOps(ops) {
-	for(let i=0; i<ops.length; i++) {
-		console.log(`fuzion-cli --op ${ops[i]}`);
-		await callAsync(ops[i]);
+	for(op of ops) {
+		console.log(`fuzion-cli -o ${op}`);
+		try {
+			const opMod = require(`${path}/${op}`);
+			await opMod.cli();
+		} catch (error) {
+			console.log(`${error}`);
+			//console.log(error);
+		}
 	}
 }
 
-async function callAsync(op) {
-	switch(op) {
-		case "db-builder":
-			require("./lib/db-builder")();
-			break;
-		case "mysql-start":
-			require("./lib/mysql-ops").start();
-			break;
-		case "mysql-reset":
-			require("./lib/mysql-ops").reset();
-			break;
-		case "db-tables":
-			await require("./lib/db").cliTables();
-			break;
-		case "db-table-info":
-			await require("./lib/db").cliTableInfo();
-			break;
-		case "sproc-builder":
-			await require("./lib/sproc-builder").build();
-			break;
-		default:
-			fuzionCliError(`fuzion-cli:ERROR unrecognized --op "${op}"`);
-			break;
-	}
-}
-
-function fuzionCliError(errorString) {
-	console.log(errorString);
-}
