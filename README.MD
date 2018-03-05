@@ -24,15 +24,15 @@
     consul-start	- installs consul (if not installed) and runs consul
     db-table-info	- displays information about a table in the database
     db-tables-info	- displays a list of tables in the database
-    mysql-reset		- shuts down the mysql container (fuzion-mysql) and deletes/clears the mounted volume (lmysql)
-    mysql-start		- starts the the mysql container (fuzion-mysql) with mounted volume (lmysql)
+    mysql-reset	- shuts down the mysql container (fuzion-mysql) and deletes/clears the mounted volume (lmysql)
+    mysql-start	- starts the the mysql container (fuzion-mysql) with mounted volume (lmysql)
     query-directory	- runs all of the .sql files in a directory in the mysql container
-    query-file		- runs a .sql file in the mysql container
-    query-list 		- runs the .sql files in a list file in the mysql container
+    query-file	- runs a .sql file in the mysql container
+    query-list 	- runs the .sql files in a list file in the mysql container
     query-project	- runs all of the .sql files in a fuzion-db-scripts project (scripts + sprocs) in the mysql container
-    query			- runs an arbitrary sql command in the mysql container
-    sprocs-db		- generates basic sprocs for each table in the database in the mysql container
-    sprocs			- generates basic sprocs for a table in the database in the mysql container
+    query		- runs an arbitrary sql command in the mysql container
+    sprocs-db	- generates basic sprocs for each table in the database in the mysql container
+    sprocs		- generates basic sprocs for a table in the database in the mysql container
 
 # Examples
 
