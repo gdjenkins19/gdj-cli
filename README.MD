@@ -43,7 +43,7 @@
 >$ fuzion-cli --op mysql-start
 
 - Start a new mysql container, and rebuild it from scratch
->$ fuzion-cli --op "mysql-reset|mysql-start|query-project" --api ADMIN --path /Users/gdjenkins19/Sites/admin/fuzion-db-scripts/01_FUZION_ADMIN/
+>$ fuzion-cli --op "mysql-reset|mysql-start|query-project" --api ADMIN --path /Users/gdjenkins19/Sites/admin/fuzion-db-scripts/01_FUZION_ADMIN
 
 - Run a sql command
 >$ fuzion-cli --op query --api ADMIN --sql "SELECT *, hex(fuzion_security_role_id)  FROM security_role;"
