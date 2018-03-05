@@ -1,0 +1,80 @@
+{
+  "services": [
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:3306",
+          "timeout": "2s"
+        }
+      ],
+      "name": "dbsqlfuzion",
+      "port": 3306,
+      "tags": [
+        "mysql-cluster",
+        "sql"
+      ]
+    },
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:9092",
+          "timeout": "2s"
+        }
+      ],
+      "name": "kafka",
+      "port": 9092
+    },
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:3011",
+          "timeout": "2s"
+        }
+      ],
+      "name": "admin",
+      "port": 3011
+    },
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:3012",
+          "timeout": "2s"
+        }
+      ],
+      "name": "exhibitor",
+      "port": 3012
+    },
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:3013",
+          "timeout": "2s"
+        }
+      ],
+      "name": "contact",
+      "port": 3013
+    },
+    {
+      "checks": [
+        {
+          "interval": "10s",
+          "name": "alive",
+          "tcp": "127.0.0.1:3014",
+          "timeout": "2s"
+        }
+      ],
+      "name": "event",
+      "port": 3014
+    }
+  ]
+}

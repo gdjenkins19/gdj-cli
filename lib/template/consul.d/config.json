@@ -1,0 +1,12 @@
+{
+  "advertise_addr": "127.0.0.1",
+  "bind_addr": "127.0.0.1",
+  "client_addr": "127.0.0.1",
+  "bootstrap_expect": 1,
+  "data_dir": "/etc/consul.d",
+  "enable_debug": true,
+  "log_level": "info",
+  "retry_interval": "15s",
+  "server": true,
+  "ui": true
+}
