@@ -51,3 +51,5 @@
 - Run a sproc
 >$ fuzion-cli --op query --api ADMIN --sql "call insert_security_role(null,'11E81BFC9231C8C2AB900242AC110003','gdj_role','Gary Dean Jenkins Role','Lets test adding a role shall we?',null,null,1);"
 
+- Generate Sprocs for a table
+>$ fuzion-cli --op sprocs --api ADMIN --path /Users/gdjenkins19/Sites/admin/fuzion-db-scripts/01_FUZION_ADMIN/sprocs --table security_role
