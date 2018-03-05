@@ -1,18 +1,18 @@
-USE `db_name`;
+USE `DB_NAME`;
 
-drop procedure if exists select_table_name_by_id;
+drop procedure if exists select_TABLE_NAME_by_id;
 
 delimiter //
-create procedure select_table_name_by_id (
-	in in_fuzion_table_name_id varchar(32)
+create procedure select_TABLE_NAME_by_id (
+	in in_fuzion_TABLE_NAME_id varchar(32)
 )
 begin
 	select
         SELECT_COLS
 	from
-		`table_name`
+		`TABLE_NAME`
 	where
-		`fuzion_table_name_id` = unhex(in_fuzion_table_name_id)
+		`fuzion_TABLE_NAME_id` = unhex(in_fuzion_TABLE_NAME_id)
 	and
 		`status_flag` <> -1;
 end //

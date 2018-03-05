@@ -1,14 +1,14 @@
-USE `db_name`;
+USE `DB_NAME`;
 
-drop procedure if exists insert_table_name;
+drop procedure if exists insert_TABLE_NAME;
 
 delimiter //
-create procedure insert_table_name (
+create procedure insert_TABLE_NAME (
     TABLE_PARAMS
 )
 begin
-	if not exists(select 1 from `table_name` where `fuzion_table_name_id` = unhex(in_fuzion_table_name_id)) then
-		insert into `table_name` (
+	if not exists(select 1 from `TABLE_NAME` where `fuzion_TABLE_NAME_id` = unhex(in_fuzion_TABLE_NAME_id)) then
+		insert into `TABLE_NAME` (
             INSERT_COLS
         )
 		values (

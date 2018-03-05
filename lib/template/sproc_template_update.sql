@@ -1,18 +1,18 @@
-USE `db_name`;
+USE `DB_NAME`;
 
-drop procedure if exists update_table_name;
+drop procedure if exists update_TABLE_NAME;
 
 delimiter //
-create procedure update_table_name (
+create procedure update_TABLE_NAME (
     TABLE_PARAMS
 )
 begin
 	update
-		`table_name`
+		`TABLE_NAME`
 	set
         UPDATE_SETS
 	where
-		`fuzion_table_name_id` = unhex(in_fuzion_table_name_id);
+		`fuzion_TABLE_NAME_id` = unhex(in_fuzion_TABLE_NAME_id);
 end //
 delimiter ;
 

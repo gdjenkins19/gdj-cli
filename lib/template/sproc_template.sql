@@ -1,14 +1,14 @@
-USE `db_name`;
+USE `DB_NAME`;
 
-drop procedure if exists insert_table_name;
+drop procedure if exists insert_TABLE_NAME;
 
 delimiter //
-create procedure insert_table_name (
+create procedure insert_TABLE_NAME (
     TABLE_PARAMS
 )
 begin
-	if not exists(select 1 from `table_name` where `fuzion_table_name_id` = unhex(fuzion_table_name_id)) then
-		insert into `table_name` (
+	if not exists(select 1 from `TABLE_NAME` where `fuzion_TABLE_NAME_id` = unhex(fuzion_TABLE_NAME_id)) then
+		insert into `TABLE_NAME` (
             INSERT_COLS
         )
 		values (
@@ -18,10 +18,10 @@ begin
 end //
 delimiter ;
 
-drop procedure if exists select_table_name_paged;
+drop procedure if exists select_TABLE_NAME_paged;
 
 delimiter //
-create procedure select_table_name_paged (
+create procedure select_TABLE_NAME_paged (
 	in skip int,
 	in take int
 )
@@ -29,7 +29,7 @@ begin
 	select
         SELECT_COLS
 	from
-		`table_name`
+		`TABLE_NAME`
 	where
 		`status_flag` <> -1
 	order by
@@ -41,68 +41,68 @@ begin
 end //
 delimiter ;
 
-drop procedure if exists select_table_name_by_id;
+drop procedure if exists select_TABLE_NAME_by_id;
 
 delimiter //
-create procedure select_table_name_by_id (
-	in fuzion_table_name_id varchar(32)
+create procedure select_TABLE_NAME_by_id (
+	in fuzion_TABLE_NAME_id varchar(32)
 )
 begin
 	select
         SELECT_COLS
 	from
-		`table_name`
+		`TABLE_NAME`
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id)
+		`fuzion_TABLE_NAME_id` = unhex(fuzion_TABLE_NAME_id)
 	and
 		`status_flag` <> -1;
 end //
 delimiter ;
 
-drop procedure if exists select_table_name_count;
+drop procedure if exists select_TABLE_NAME_count;
 
 delimiter //
-create procedure select_table_name_count()
+create procedure select_TABLE_NAME_count()
 begin
 	select
 		count(1) as count
 	from
-		`table_name`
+		`TABLE_NAME`
 	where
 		`status_flag` <> -1;
 end //
 delimiter ;
 
-drop procedure if exists set_status_table_name;
+drop procedure if exists set_status_TABLE_NAME;
 
 delimiter //
-create procedure set_status_table_name (
-	in fuzion_table_name_id varchar(32),
+create procedure set_status_TABLE_NAME (
+	in fuzion_TABLE_NAME_id varchar(32),
 	in status_flag tinyint(4)
 )
 begin
 	update
-		`table_name`
+		`TABLE_NAME`
 	set
 		`status_flag` = status_flag
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id);
+		`fuzion_TABLE_NAME_id` = unhex(fuzion_TABLE_NAME_id);
 end //
 delimiter ;
 
-drop procedure if exists update_table_name;
+drop procedure if exists update_TABLE_NAME;
 
 delimiter //
-create procedure update_table_name (
+create procedure update_TABLE_NAME (
     TABLE_PARAMS
 )
 begin
 	update
-		`table_name`
+		`TABLE_NAME`
 	set
         UPDATE_SETS
 	where
-		`fuzion_table_name_id` = unhex(fuzion_table_name_id);
+		`fuzion_TABLE_NAME_id` = unhex(fuzion_TABLE_NAME_id);
 end //
 delimiter ;
 
