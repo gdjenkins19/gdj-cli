@@ -1,0 +1,15 @@
+#modules
+/node_modules/*
+
+#IDE/editor-specific files
+.idea
+.vscode
+
+#Webpack build output
+/public/build/*
+
+#local config files
+docker-compose.yml
+/lib/data/db_config.json
+package.json
+package-lock.json

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  fuzion-mysql:
+    image: mysql:5.7.20
+    restart: always
+    volumes:
+      - "/opt/mysql:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: coffeetime
+  fuzion-exhibitor-api:
+    build: .
+    ports: 
+      - "8080:3012"
+    depends_on:
+      - fuzion-mysql
