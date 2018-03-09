@@ -18,7 +18,7 @@
 	"homepage": "https://github.com/gdjenkins19/gdj-cli#readme",
 	"dependencies": {
 	  "camelcase": "^4.1.0",
-	  "fuzion-core-lib": "git+https://github.com/Klowd/fuzion-core-lib.git#dev",
+	  "fuzion-core-lib": "git+https://github.com/Klowd/fuzion-core-lib.git#v1.0",
 	  "mysql": "^2.15.0",
 	  "optimist": "^0.6.1",
 	  "pluralize": "^7.0.0",

@@ -18,7 +18,7 @@ iterateOps(ops);
 
 async function iterateOps(ops) {
 	for(op of ops) {
-		console.log(`fuzion-cli -op ${op}`);
+		console.log(`fuzion-cli --op ${op}`);
 		try {
 			const opMod = require(`${path}/${op}`);
 			await (argv.help) ? console.log(opMod.help) : opMod.cli();
