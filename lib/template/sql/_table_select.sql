@@ -1,4 +1,4 @@
-use 'DB_NAME';
+USE `DB_NAME`;
 
 drop procedure if exists table_select;
 

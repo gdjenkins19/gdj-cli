@@ -1,4 +1,4 @@
-USE `fuzion`;
+USE `DB_NAME`;
 
 drop function if exists create_uuid;
 

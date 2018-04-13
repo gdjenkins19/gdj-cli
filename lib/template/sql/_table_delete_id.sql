@@ -1,4 +1,4 @@
-use 'DB_NAME';
+use `DB_NAME`;
 
 drop procedure if exists table_delete_id;
 
